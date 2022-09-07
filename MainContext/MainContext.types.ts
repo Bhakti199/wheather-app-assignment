@@ -17,5 +17,4 @@ export type MainContextType = {
   };
   setCapitalWheather: (capitalWheather: object) => void;
   setCountryDetails: (countryDetails: object) => void;
-  // capitalWheatherHandler: () => void;
 };

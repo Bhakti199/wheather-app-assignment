@@ -37,7 +37,6 @@ export const InputCountry = ({ navigation }) => {
         });
       })
       .catch((error) => console.error(error));
-    console.log(countryDetails);
     navigation.navigate("Country");
   };
 

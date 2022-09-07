@@ -13,8 +13,6 @@ export const DisplayCountryDetails = ({ navigation }) => {
     await fetch(wheatherURL + countryDetails.capital)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
-
         setCapitalWheather({
           temperature: data.current.temperature,
           weatherIcons: data.current.weather_icons[0],
