@@ -45,9 +45,9 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   inputCountry: {
-    width: "10rem",
+    width: "10",
   },
   submitBtn: {
-    width: "5rem",
+    width: "5",
   },
 });

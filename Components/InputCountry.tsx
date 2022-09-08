@@ -22,6 +22,17 @@ export const InputCountry = ({ navigation }) => {
     await fetch(countryURL + countryInput)
       .then((res) => res.json())
       .then((data) => {
+        let country = data.find(
+          (country) =>
+            country.name.common.toUpperCase() == countryInput.toUpperCase()
+        );
+        if (!country) {
+          country = data.find((country) =>
+            country.name.common
+              .toUpperCase()
+              .includes(countryInput.toUpperCase())
+          );
+        }
         setCapitalWheather({
           temperature: 0,
           weatherIcons: "",
@@ -29,11 +40,11 @@ export const InputCountry = ({ navigation }) => {
           precipitation: 0,
         });
         setCountryDetails({
-          capital: data[0].capital[0],
-          population: data[0].population,
-          latitude: data[0].latlng[0],
-          longitude: data[0].latlng[1],
-          flag: data[0].flags.svg,
+          capital: country.capital[0],
+          population: country.population,
+          latitude: country.latlng[0],
+          longitude: country.latlng[1],
+          flag: country.flags.png,
         });
       })
       .catch((error) => console.error(error));

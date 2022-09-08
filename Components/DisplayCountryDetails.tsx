@@ -9,7 +9,6 @@ export const DisplayCountryDetails = ({ navigation }) => {
     "http://api.weatherstack.com/current?access_key=0fbf43ff9a2b9e1a4503d034f030b3d3&query=";
 
   const capitalWheatherHandler = async () => {
-    console.log(wheatherURL + countryDetails.capital);
     await fetch(wheatherURL + countryDetails.capital)
       .then((res) => res.json())
       .then((data) => {
@@ -27,13 +26,12 @@ export const DisplayCountryDetails = ({ navigation }) => {
   return (
     <View style={styles.countryDetailsContainer}>
       <Text style={styles.titleStyle}>Country Details</Text>
+
       <Image
-        source={{
-          uri:
-            countryDetails.flag ||
-            "https://freesvg.org/img/countries_flags.png",
-        }}
         style={styles.flag}
+        source={{
+          uri: countryDetails.flag,
+        }}
       />
       <Text style={styles.textStyle}>Capital : {countryDetails.capital}</Text>
       <Text style={styles.textStyle}>
@@ -68,8 +66,8 @@ const styles = StyleSheet.create({
     paddingBottom: 20,
   },
   flag: {
-    width: "12rem",
-    height: "9rem",
+    width: 250,
+    height: 150,
     paddingVertical: 15,
   },
   textStyle: {

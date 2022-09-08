@@ -4,7 +4,7 @@ import { View, Text, Image, StyleSheet } from "react-native";
 import { useMainContext } from "../MainContext/MainContext";
 
 export const DisplayCapitalWheather = () => {
-  const { capitalWheather, countryDetails } = useMainContext();
+  const { capitalWheather } = useMainContext();
 
   return (
     <View style={styles.wheatherDetailesContainer}>
@@ -32,8 +32,8 @@ const styles = StyleSheet.create({
     padding: 50,
   },
   wheatherIcons: {
-    width: "6rem",
-    height: "6rem",
+    width: 100,
+    height: 100,
   },
   textStyle: {
     color: "#64748b",
